@@ -23,7 +23,7 @@ const SideBar = () => (
       <h2>About</h2>
       <p>
         Hi, I&apos;m Mustafa. I am a{' '}
-        <a href="https://icme.stanford.edu/">Stanford ICME</a> graduate, YC
+        <a href="https://www.erciyes.edu.tr/">Erciyes University</a> graduate, YC
         alumnus, and the co-founder and CTO of{' '}
         <a href="https://promptfoo.dev">Promptfoo</a>. Previously, I
         was VP of Engineering at <a href="https://usesmileid.com">SmileID</a>,
