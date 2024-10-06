@@ -23,12 +23,11 @@ const SideBar = () => (
       <h2>About</h2>
       <p>
         Hi, I&apos;m Mustafa. I am a{' '}
-        <a href="https://www.erciyes.edu.tr/">Erciyes University</a> graduate, YC
-        alumnus, and the co-founder and CTO of{' '}
-        <a href="https://promptfoo.dev">Promptfoo</a>. Previously, I
-        was VP of Engineering at <a href="https://usesmileid.com">SmileID</a>,
-        co-founder and CTO of <a href="https://arthena.com">Arthena</a>, and
-        co-founded <a href="https://matroid.com">Matroid</a>.
+        <a href="https://www.erciyes.edu.tr/" target="_blank" rel="noopener noreferrer">Erciyes University</a> graduate and
+        currently a Software Engineer at <a href="https://www.huawei.com" target="_blank" rel="noopener noreferrer">Huawei</a>.
+        I specialize in frontend development and contribute to projects that enhance mobile
+        services and internal systems. I&apos;m passionate about leveraging diverse tech stacks
+        to drive innovation.
       </p>
       <ul className="actions">
         <li>
