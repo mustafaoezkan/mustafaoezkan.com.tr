@@ -2,22 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import Markdown from 'markdown-to-jsx';
+import './Job.css';
 
 const Job = ({
   data: {
-    name, position, url, startDate, endDate, summary, highlights,
+    name, position, url, startDate, endDate, summary, highlights, logo,
   },
 }) => (
   <article className="jobs-container">
-    <header>
-      <h4>
-        <a href={url}>{name}</a> - {position}
-      </h4>
-      <p className="daterange">
-        {' '}
-        {dayjs(startDate).format('MMMM YYYY')} -{' '}
-        {endDate ? dayjs(endDate).format('MMMM YYYY') : 'PRESENT'}
-      </p>
+    <header className="title-container">
+      <div className="sub-title">
+        <h4>
+          <a href={url}>{name}</a> - {position}
+        </h4>
+        <p className="daterange">
+          {' '}
+          {dayjs(startDate).format('MMMM YYYY')} -{' '}
+          {endDate ? dayjs(endDate).format('MMMM YYYY') : 'PRESENT'}
+        </p>
+      </div>
+      <a href={url} target="_blank" rel="noopener noreferrer" className="job-link">
+        {logo && <img src={logo} alt={`${name} logo`} className="job-logo" />}
+      </a>
     </header>
     {summary ? (
       <Markdown
@@ -53,6 +59,7 @@ Job.propTypes = {
     endDate: PropTypes.string,
     summary: PropTypes.string,
     highlights: PropTypes.arrayOf(PropTypes.string.isRequired),
+    logo: PropTypes.string,
   }).isRequired,
 };
 
