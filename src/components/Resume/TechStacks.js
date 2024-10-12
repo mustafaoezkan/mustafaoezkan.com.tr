@@ -14,6 +14,7 @@ const TechStacks = ({ techStacks }) => {
 
   return (
     <div className="techStacks">
+      <div className="link-to" id="techstacks" />
       <div className="title">
         <h3>Tech Stacks</h3>
       </div>
