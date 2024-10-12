@@ -5,16 +5,16 @@ import Main from '../layouts/Main';
 
 import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
-import Skills from '../components/Resume/Skills';
+import TechStacks from '../components/Resume/TechStacks';
 import degrees from '../data/resume/degrees';
 import work from '../data/resume/work';
-import { skills, categories } from '../data/resume/skills';
+import techStacks from '../data/resume/techStacks';
 
 // NOTE: sections are displayed in order defined.
 const sections = {
   Education: () => <Education data={degrees} />,
   Experience: () => <Experience data={work} />,
-  Skills: () => <Skills skills={skills} categories={categories} />,
+  TechStacks: () => <TechStacks techStacks={techStacks} />,
 };
 
 const Resume = () => (
