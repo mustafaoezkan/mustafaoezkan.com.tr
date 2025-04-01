@@ -1,42 +1,51 @@
 # Intro
-I'm currently a Software Engineer at Huawei. Though I have more experience on the frontend side, I've worked across the backend, mobile, and cloud environments, contributing to a variety of projects. My journey has exposed me to diverse technologies, and I continue to explore and grow across different tech domains.
 
-# Ongoing Projects at Huawei
+I'm an Expert Software Engineer at Yapı Kredi Technology. I work on core banking systems, particularly focusing on time deposit application development. My stack includes Java Spring Boot, React.js, and Oracle. I’m also involved in large-scale architectural transformation efforts—helping migrate monolithic applications to microservices.  
 
-#### HMS Core
-In this project, I am part of the team working on Huawei Mobile Service Kits, which serve around 5 million users. I help build React Native plugins for different kits such as Location Kit, Account Kit, ADS Kit, and so on. I work with Java and React Native.<br><br>
+# Ongoing Projects at Yapı Kredi Technology
 
-#### Internal Projects
-I’m also part of a project where we are developing an internal system. Here, I play a full-stack role using both React and Java Spring Boot, which has allowed me to strengthen my backend development skills.
+#### Core Banking (Time Deposit Application Development)
 
-# Past Projects at Huawei
-
-#### Dynamic Tag Manager (DTM)
-I contributed to the Huawei Dynamic Tag Manager (similar to Google Tag Manager). My role involved coordinating with vendors to integrate their products into the DTM platform, as well as managing and refining the scripts. I used JavaScript throughout the process, working in tag analysis, customer communication, script optimization, and system integration. It was a hands-on project where I also prepared documentation.<br><br>
-
-#### Astrograph
-I worked on an open-source graph library from scratch. My focus was on adding JSON support so that users could export and import graph objects in JSON format. It gave me great experience with both JavaScript and TypeScript for library development. On the demo side, I utilized Vue.js and React.js.<br><br>
-
-#### AppCube
-On this project, I played a full-stack role. I worked on everything from payment system integrations to mobile web views and REST API integrations. The technologies I mainly used here were Vue.js and TypeScript.<br><br>
-
-#### EBG Partner
-This was a challenging project involving a large-scale education platform used in many countries (200,000 ICT Academy students annually across 170+ countries). As a frontend developer using Vue.js, I worked on solving bugs, building new features, and integrating backend APIs into the frontend.
+As part of the Time Deposit Application Development team, I develop and maintain deposit-related applications using Java Spring Boot, React.js, and Oracle. I play an active role in transforming legacy monolithic systems into scalable microservices. In addition to full stack development, I write unit tests (JUnit, Mockito), design REST APIs, and work with batch job automation using UC4 in a regulated banking environment.
 
 # Past Experiences
 
+#### Huawei - HMS Core
+
+Contributed to Huawei Mobile Services (HMS) Core SDKs, building React Native plugins for modules like Location Kit, Account Kit, and ADS Kit. These services reach around 5 million users. I worked with Java and React Native.
+
+#### Huawei - Internal Projects
+
+Worked in a full-stack role to develop internal enterprise systems using React and Java Spring Boot, strengthening my backend development experience.
+
+#### Huawei - Dynamic Tag Manager (DTM)
+
+Supported the development of Huawei’s Dynamic Tag Manager, coordinating vendor integrations and optimizing script performance. Used vanilla JavaScript for tag handling, customer collaboration, and documentation.
+
+#### Huawei - Astrograph
+
+Helped develop an open-source graph visualization library from scratch. Focused on adding JSON import/export support. Used JavaScript and TypeScript for the core library, with Vue.js and React.js in the demo layer.
+
+#### Huawei - AppCube
+
+Played a full-stack role, working on payment integrations, REST APIs, and mobile web views. Technologies included Vue.js and TypeScript.
+
+#### Huawei - EBG Partner
+
+Contributed as a frontend developer on a global education platform used by over 200,000 students across 170+ countries. Worked with Vue.js to fix bugs, develop features, and integrate APIs.
+
 #### CTech Internship
-During my university years, I worked as a mobile developer at CTech, where I developed a mobile application that streamed live video using the RTMP protocol. Flutter was the main technology I worked with in this project.<br><br>
+
+Built a live-streaming mobile app using Flutter and the RTMP protocol during my university internship.
 
 #### University IT Internship
-I also interned at my university’s IT department, working as a full-stack developer. I built an inventory management system using PostgreSQL, React, and Node.js (Express).<br><br>
+
+Worked as a full-stack developer to build an inventory management system using PostgreSQL, React, and Node.js (Express).
 
 #### Kindergarten Management System
-Along with a group of friends, I developed a kindergarten management system during my university days. I worked on both frontend and backend sides. The frontend was built with React, while the backend was in Golang. We used PostgreSQL as the database.
+
+Developed a full-stack kindergarten management system with React (frontend), Golang (backend), and PostgreSQL (database) as a university group project.
 
 # Hobbies & Interests
-In my free time, I enjoy walking, trying new foods, and exploring new places. I also love watching series—my favorite is Better Call Saul. I’m a huge fan of gaming as well, particularly Rocket League and Rainbow Six Siege.
 
-
-
-
+In my free time, I enjoy walking, trying new foods, and exploring new places. I love watching TV shows—*Better Call Saul* is my favorite—and I’m a big fan of gaming, especially *Rocket League* and *Rainbow Six Siege*.

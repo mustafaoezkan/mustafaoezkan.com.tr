@@ -11,16 +11,24 @@ import { BiLogoSpringBoot, BiLogoPostgresql } from 'react-icons/bi';
 
 const techStacks = [
   {
+    title: 'Java',
+    icon: <FaJava size={50} style={{ color: '#ED8B00' }} />,
+  },
+  {
+    title: 'React.js',
+    icon: <FaReact size={50} style={{ color: '#61DAFB' }} />,
+  },
+  {
+    title: 'Spring Boot',
+    icon: <BiLogoSpringBoot size={50} style={{ color: '#6DB33F' }} />,
+  },
+  {
     title: 'JavaScript',
     icon: <SiJavascript size={50} style={{ color: 'rgb(255, 255, 0)', background: 'black' }} />,
   },
   {
     title: 'TypeScript',
     icon: <SiTypescript size={50} style={{ color: '#007ACC' }} />,
-  },
-  {
-    title: 'React.js',
-    icon: <FaReact size={50} style={{ color: '#61DAFB' }} />,
   },
   {
     title: 'Vue.js',
@@ -37,14 +45,6 @@ const techStacks = [
   {
     title: 'Golang',
     icon: <FaGolang size={50} style={{ color: '#00ADD8' }} />,
-  },
-  {
-    title: 'Spring Boot',
-    icon: <BiLogoSpringBoot size={50} style={{ color: '#6DB33F' }} />,
-  },
-  {
-    title: 'Java',
-    icon: <FaJava size={50} style={{ color: '#ED8B00' }} />,
   },
   {
     title: 'PostgreSQL',
