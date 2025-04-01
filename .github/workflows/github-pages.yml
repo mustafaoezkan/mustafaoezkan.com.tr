@@ -62,16 +62,26 @@ jobs:
             done
           }
           retry npm run predeploy
+          # Verify build directory has content
+          echo "Listing build directory contents:"
+          ls -la build/
+          if [ ! -f "build/index.html" ]; then
+            echo "Error: build/index.html not found!"
+            exit 1
+          fi
         env:
           NODE_ENV: production
           # Remove this line if you would like to skip using google analytics
           REACT_APP_GA_TRACKING_ID: G-LLNZQL1M8Z
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v3
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: "build"
+          path: "./build"
+          name: "github-pages"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages
