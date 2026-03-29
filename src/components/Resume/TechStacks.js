@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import IconGroup from './TechStacks/IconGroup';
+import { useLanguage } from '../../contexts/LanguageContext';
 import './TechStacks.css';
 
 const TechStacks = ({ techStacks }) => {
+  const { t } = useLanguage();
+
   const groupIcons = (items) => (
     <div className="group">
       {items.map((item) => (
@@ -16,7 +19,7 @@ const TechStacks = ({ techStacks }) => {
     <div className="techStacks">
       <div className="link-to" id="techstacks" />
       <div className="title">
-        <h3>Tech Stacks</h3>
+        <h3>{t('resume.techStacks')}</h3>
       </div>
       {groupIcons(techStacks)}
     </div>

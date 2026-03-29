@@ -1,22 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import Main from '../layouts/Main';
+import AnimatedPage from '../components/Template/AnimatedPage';
+import { useLanguage } from '../contexts/LanguageContext';
 
-const PageNotFound = () => (
-  <HelmetProvider>
-    <div className="not-found">
-      <Helmet title="404 Not Found">
-        <meta
-          name="description"
-          content="The content you are looking for cannot be found."
-        />
-      </Helmet>
-      <h1>Page Not Found</h1>
-      <p>
-        Return <Link to="/">home</Link>.
-      </p>
-    </div>
-  </HelmetProvider>
-);
+const PageNotFound = () => {
+  const { t } = useLanguage();
+  return (
+    <Main title="404" fullPage>
+      <AnimatedPage>
+        <div className="not-found">
+          <h1>{t('notFound.title')}</h1>
+          <p>
+            {t('notFound.returnHome')} <Link to="/">{t('notFound.home')}</Link>.
+          </p>
+        </div>
+      </AnimatedPage>
+    </Main>
+  );
+};
 
 export default PageNotFound;

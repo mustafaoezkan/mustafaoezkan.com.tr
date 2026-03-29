@@ -1,0 +1,416 @@
+/* Dark Mode & Theme Variables */
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f4f4f4;
+  --fg: #646464;
+  --fg-bold: #3c3b3b;
+  --fg-light: #aaaaaa;
+  --border: rgba(160, 160, 160, 0.3);
+  --border-bg: rgba(160, 160, 160, 0.075);
+  --border-alt: rgba(160, 160, 160, 0.65);
+  --accent: #2e59ba;
+}
+
+[data-theme="dark"] {
+  --bg: #1a1a2e;
+  --bg-alt: #16213e;
+  --fg: #c4c4c4;
+  --fg-bold: #e0e0e0;
+  --fg-light: #888888;
+  --border: rgba(200, 200, 200, 0.15);
+  --border-bg: rgba(200, 200, 200, 0.05);
+  --border-alt: rgba(200, 200, 200, 0.3);
+  --accent: #5b8af5;
+}
+
+/* Override hardcoded colors with CSS variables */
+[data-theme="dark"] body {
+  background: var(--bg-alt);
+  color: var(--fg);
+}
+
+[data-theme="dark"] #header {
+  background-color: var(--bg);
+  border-bottom-color: var(--border);
+}
+
+[data-theme="dark"] #header a {
+  color: var(--fg-bold);
+}
+
+[data-theme="dark"] #header .links ul li {
+  border-left-color: var(--border);
+}
+
+[data-theme="dark"] .post {
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .post > header {
+  border-bottom-color: var(--border);
+}
+
+[data-theme="dark"] #sidebar > * {
+  border-top-color: var(--border);
+}
+
+[data-theme="dark"] #intro header h2,
+[data-theme="dark"] #intro header p a {
+  color: var(--fg-bold);
+}
+
+[data-theme="dark"] .blurb h2,
+[data-theme="dark"] .blurb p {
+  color: var(--fg);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--fg-bold);
+}
+
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+  color: var(--fg-bold);
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--accent) !important;
+}
+
+[data-theme="dark"] .button {
+  box-shadow: inset 0 0 0 1px var(--border);
+  color: var(--fg-bold) !important;
+}
+
+[data-theme="dark"] .button:hover {
+  box-shadow: inset 0 0 0 1px var(--accent);
+  color: var(--accent) !important;
+}
+
+[data-theme="dark"] blockquote {
+  border-left-color: var(--border);
+}
+
+[data-theme="dark"] code {
+  background: var(--border-bg);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] hr {
+  border-bottom-color: var(--border);
+}
+
+[data-theme="dark"] #footer .icons,
+[data-theme="dark"] #footer .copyright {
+  color: var(--fg-light);
+}
+
+[data-theme="dark"] #footer .copyright a {
+  color: var(--fg-light);
+}
+
+[data-theme="dark"] .job-logo {
+  filter: grayscale(100%) brightness(1.5);
+}
+
+[data-theme="dark"] .job-link:hover .job-logo {
+  filter: grayscale(0%) brightness(1.2);
+}
+
+[data-theme="dark"] .label {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--fg-bold);
+}
+
+[data-theme="dark"] .hamburger-ul li a h3 {
+  border-top-color: var(--border);
+}
+
+[data-theme="dark"] .bm-menu {
+  background: var(--bg) !important;
+}
+
+[data-theme="dark"] .bm-overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .bm-cross {
+  background: var(--fg-bold) !important;
+}
+
+[data-theme="dark"] .email-at a {
+  color: var(--fg);
+}
+
+[data-theme="dark"] .inline-container a {
+  color: var(--fg-bold);
+}
+
+[data-theme="dark"] .daterange {
+  color: var(--fg-light);
+}
+
+[data-theme="dark"] .summary {
+  color: var(--fg);
+}
+
+[data-theme="dark"] .points li {
+  color: var(--fg);
+}
+
+[data-theme="dark"] .markdown p,
+[data-theme="dark"] .markdown li {
+  color: var(--fg);
+}
+
+[data-theme="dark"] .markdown a {
+  color: var(--accent);
+}
+
+/* ─── Header controls (theme / language toggle) ─── */
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  height: inherit;
+  line-height: inherit;
+  margin-right: 0.5em;
+}
+
+.theme-toggle,
+.language-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85em;
+  padding: 0.3em 0.5em;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: inherit;
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  box-shadow: none;
+  height: auto;
+}
+
+.theme-toggle:hover,
+.language-toggle:hover {
+  background-color: var(--border-bg);
+  color: var(--accent);
+  box-shadow: none;
+}
+
+@media (max-width: 980px) {
+  .header-controls {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 736px) {
+  .header-controls {
+    gap: 0.15em;
+  }
+
+  .theme-toggle,
+  .language-toggle {
+    font-size: 0.75em;
+    padding: 0.2em 0.4em;
+  }
+}
+
+/* ─── Resume section dividers ─── */
+
+#resume {
+  .education,
+  .experience,
+  .techStacks,
+  .awards {
+    padding-top: 2.5em;
+    margin-top: 2.5em;
+    border-top: 1px solid var(--border);
+
+    &:first-of-type {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+/* ─── Awards section ─── */
+
+.awards {
+  .title {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}
+
+.award-container {
+  margin-bottom: 1.5em;
+  padding: 1.25em 1.5em;
+  border-radius: 6px;
+  background: var(--border-bg);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .award-title {
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    font-size: 0.85em;
+    margin-bottom: 0.2em;
+  }
+
+  .award-issuer {
+    text-transform: none;
+    padding-top: 0;
+    margin-bottom: 0;
+    font-size: 0.8em;
+    color: var(--fg-light);
+
+    a {
+      color: var(--accent);
+      border-bottom: none;
+    }
+  }
+}
+
+[data-theme="dark"] .award-container {
+  background: rgba(255, 255, 255, 0.03);
+
+  &:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ─── CV Download Button ─── */
+
+.cv-download {
+  display: flex;
+  justify-content: center;
+  padding: 3em 0 0.5em;
+  margin-top: 2.5em;
+  border-top: 1px solid var(--border);
+
+  .cv-button {
+    font-size: 0.6em;
+    padding: 0 2em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .cv-icon {
+    font-size: 1.2em;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 736px) {
+  .cv-download {
+    padding: 2em 0 0.5em;
+  }
+}
+
+/* ─── Degree section polish ─── */
+
+.degree-container {
+  padding: 0.75em 0;
+
+  .degree {
+    font-weight: 600 !important;
+  }
+}
+
+/* ─── Jobs section polish ─── */
+
+.jobs-container {
+  padding: 1.5em 0;
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0.5em;
+  }
+}
+
+/* ─── Section titles ─── */
+
+#resume .education .title,
+#resume .experience .title,
+.techStacks > .title,
+.awards .title {
+  position: relative;
+  margin-bottom: 2em;
+
+  h3 {
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2em;
+      height: 2px;
+      background: var(--accent);
+      margin: 0.5em auto 0;
+      border-radius: 1px;
+    }
+  }
+}
+
+/* ─── Sidebar polish ─── */
+
+.blurb p {
+  line-height: 1.8;
+  font-size: 0.95em;
+}
+
+/* ─── Markdown article polish ─── */
+
+.markdown h1 {
+  font-size: 1.2em;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.markdown p {
+  line-height: 1.8;
+}
+
+/* ─── Contact icons hover ─── */
+
+#footer .icons a,
+.contact-icons a {
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+}

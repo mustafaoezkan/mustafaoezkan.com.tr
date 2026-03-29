@@ -18,6 +18,8 @@ const Main = (props) => (
     >
       {props.title && <title>{props.title}</title>}
       <meta name="description" content={props.description} />
+      <meta property="og:title" content={props.title ? `${props.title} | Mustafa Ozkan` : 'Mustafa Ozkan'} />
+      <meta property="og:description" content={props.description} />
     </Helmet>
     <div id="wrapper">
       <Navigation />

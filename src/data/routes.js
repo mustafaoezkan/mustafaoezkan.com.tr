@@ -5,18 +5,17 @@ const routes = [
     path: '/',
   },
   {
+    labelKey: 'nav.about',
     label: 'About',
     path: '/about',
   },
   {
+    labelKey: 'nav.resume',
     label: 'Resume',
     path: '/resume',
   },
-  // {
-  //   label: 'Projects',
-  //   path: '/projects',
-  // },
   {
+    labelKey: 'nav.contact',
     label: 'Contact',
     path: '/contact',
   },

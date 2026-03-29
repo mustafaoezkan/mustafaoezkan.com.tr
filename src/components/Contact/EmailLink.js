@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 // Validates the first half of an email address.
 const validateText = (text) => {
@@ -9,7 +10,7 @@ const validateText = (text) => {
   return re.test(text) || text.length === 0;
 };
 
-const messages = [
+const messagesEn = [
   'hi',
   'hello',
   'hola',
@@ -25,6 +26,24 @@ const messages = [
   'admin',
   'or-I-really-like-your-website',
   'thanks',
+];
+
+const messagesTr = [
+  'merhaba',
+  'selam',
+  'hey',
+  'bana-istedigin-adresten-yazabilirsin! Cidden',
+  'yani-her-adresten-degil. Ama cogundan',
+  'mesela-boyle',
+  'ya-da-boyle',
+  'ama boyle olmaz :(  ',
+  'ozel.konularda.da.yazabilirsin.mesela',
+  'sadece-selamlamak',
+  'bizde-calis-lutfen',
+  'yardim',
+  'admin',
+  'ya-da-siteni-cok-begendim',
+  'tesekkurler',
 ];
 
 const useInterval = (callback, delay) => {
@@ -46,13 +65,23 @@ const useInterval = (callback, delay) => {
 };
 
 const EmailLink = ({ loopMessage }) => {
-  const hold = 50; // ticks to wait after message is complete before rendering next message
-  const delay = 50; // tick length in mS
+  const hold = 50;
+  const delay = 50;
+  const { language } = useLanguage();
+  const messages = language === 'tr' ? messagesTr : messagesEn;
 
-  const [idx, updateIter] = useState(0); // points to current message
+  const [idx, updateIter] = useState(0);
   const [message, updateMessage] = useState(messages[idx]);
-  const [char, updateChar] = useState(0); // points to current char
-  const [isActive, setIsActive] = useState(true); // disable when all messages are printed
+  const [char, updateChar] = useState(0);
+  const [isActive, setIsActive] = useState(true);
+
+  // Reset animation when language changes
+  useEffect(() => {
+    updateIter(0);
+    updateChar(0);
+    updateMessage('');
+    setIsActive(true);
+  }, [language]);
 
   useInterval(
     () => {

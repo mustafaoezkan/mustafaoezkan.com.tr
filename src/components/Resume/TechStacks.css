@@ -4,14 +4,29 @@
   align-items: center;
 }
 
-.title {
+.techStacks > .title {
   margin-bottom: 20px;
 }
 
 .group {
   display: grid;
   grid-template-columns: repeat(5, 1fr); 
-  gap: 2rem;
+  gap: 2.5rem 2rem;
+  padding-bottom: 1em;
+}
+
+@media (max-width: 736px) {
+  .group {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .group {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 }
 
 .icon-group {
@@ -20,6 +35,14 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+}
+
+.icon-group svg {
+  transition: transform 0.2s ease;
+}
+
+.icon-group:hover svg {
+  transform: scale(1.1);
 }
 
 .label {

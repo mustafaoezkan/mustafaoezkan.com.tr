@@ -3,36 +3,39 @@ import { Link } from 'react-router-dom';
 import Markdown from 'markdown-to-jsx';
 
 import Main from '../layouts/Main';
+import AnimatedPage from '../components/Template/AnimatedPage';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About = () => {
   const [markdown, setMarkdown] = useState('');
+  const { language, t } = useLanguage();
 
   useEffect(() => {
-    import('../data/about.md').then((res) => {
+    const loadMarkdown = language === 'tr'
+      ? import('../data/about_tr.md')
+      : import('../data/about_en.md');
+
+    loadMarkdown.then((res) => {
       fetch(res.default)
         .then((r) => r.text())
         .then(setMarkdown);
     });
-  });
-
-  const count = markdown
-    .split(/\s+/)
-    .map((s) => s.replace(/\W/g, ''))
-    .filter((s) => s.length).length;
+  }, [language]);
 
   return (
-    <Main title="About" description="Learn about Mustafa Ozkan">
-      <article className="post markdown" id="about">
-        <header>
-          <div className="title">
-            <h2>
-              <Link to="/about">About Me</Link>
-            </h2>
-            <p>(in about {count} words)</p>
-          </div>
-        </header>
-        <Markdown>{markdown}</Markdown>
-      </article>
+    <Main title={t('about.title')} description="Learn about Mustafa Ozkan">
+      <AnimatedPage>
+        <article className="post markdown" id="about">
+          <header>
+            <div className="title">
+              <h2>
+                <Link to="/about">{t('about.title')}</Link>
+              </h2>
+            </div>
+          </header>
+          <Markdown>{markdown}</Markdown>
+        </article>
+      </AnimatedPage>
     </Main>
   );
 };

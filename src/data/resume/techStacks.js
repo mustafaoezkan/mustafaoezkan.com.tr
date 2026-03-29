@@ -1,12 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable import/no-extraneous-dependencies */
 import {
-  SiJavascript, SiTypescript, SiRedux, SiTailwindcss, SiExpress, SiPostman,
+  SiJavascript, SiTypescript, SiRedux, SiTailwindcss, SiExpress, SiApachekafka,
+  SiRabbitmq, SiOracle, SiFlutter,
 } from 'react-icons/si';
 import {
   FaReact, FaNodeJs, FaJava, FaVuejs, FaGithub, FaDocker,
 } from 'react-icons/fa';
-import { FaGolang } from 'react-icons/fa6';
 import { BiLogoSpringBoot, BiLogoPostgresql } from 'react-icons/bi';
 
 const techStacks = [
@@ -15,12 +15,12 @@ const techStacks = [
     icon: <FaJava size={50} style={{ color: '#ED8B00' }} />,
   },
   {
-    title: 'React.js',
-    icon: <FaReact size={50} style={{ color: '#61DAFB' }} />,
-  },
-  {
     title: 'Spring Boot',
     icon: <BiLogoSpringBoot size={50} style={{ color: '#6DB33F' }} />,
+  },
+  {
+    title: 'React.js',
+    icon: <FaReact size={50} style={{ color: '#61DAFB' }} />,
   },
   {
     title: 'JavaScript',
@@ -29,6 +29,18 @@ const techStacks = [
   {
     title: 'TypeScript',
     icon: <SiTypescript size={50} style={{ color: '#007ACC' }} />,
+  },
+  {
+    title: 'Oracle DB',
+    icon: <SiOracle size={50} style={{ color: '#F80000' }} />,
+  },
+  {
+    title: 'Kafka',
+    icon: <SiApachekafka size={50} style={{ color: '#231F20' }} />,
+  },
+  {
+    title: 'RabbitMQ',
+    icon: <SiRabbitmq size={50} style={{ color: '#FF6600' }} />,
   },
   {
     title: 'Vue.js',
@@ -40,11 +52,7 @@ const techStacks = [
   },
   {
     title: 'Express.js',
-    icon: <SiExpress size={50} style={{ color: '#000' }} />,
-  },
-  {
-    title: 'Golang',
-    icon: <FaGolang size={50} style={{ color: '#00ADD8' }} />,
+    icon: <SiExpress size={50} />,
   },
   {
     title: 'PostgreSQL',
@@ -55,20 +63,20 @@ const techStacks = [
     icon: <FaDocker size={50} style={{ color: '#0db7ed' }} />,
   },
   {
-    title: 'GitHub',
-    icon: <FaGithub size={50} style={{ color: '#000' }} />,
+    title: 'Flutter',
+    icon: <SiFlutter size={50} style={{ color: '#02569B' }} />,
   },
   {
-    title: 'Postman',
-    icon: <SiPostman size={50} style={{ color: '#FF6C37' }} />,
+    title: 'Redux',
+    icon: <SiRedux size={50} style={{ color: '#764abc' }} />,
   },
   {
     title: 'Tailwind CSS',
     icon: <SiTailwindcss size={50} style={{ color: '#38B2AC' }} />,
   },
   {
-    title: 'Redux',
-    icon: <SiRedux size={50} style={{ color: '#764abc' }} />,
+    title: 'GitHub',
+    icon: <FaGithub size={50} />,
   },
 ];
 

@@ -1,80 +1,134 @@
-/**
- * @typedef {Object} Position
- * Conforms to https://jsonresume.org/schema/
- *
- * @property {string} name - Name of the company
- * @property {string} position - Position title
- * @property {string} url - Company website
- * @property {string} startDate - Start date of the position in YYYY-MM-DD format
- * @property {string|undefined} endDate - End date of the position in YYYY-MM-DD format.
- * If undefined, the position is still active.
- * @property {string|undefined} summary - html/markdown summary of the position
- * @property {string[]} highlights - plain text highlights of the position (bulleted list)
- */
-const work = [
-  {
-    name: 'Yapı Kredi Technology',
-    position: 'Expert Software Engineer',
-    url: 'https://www.ykteknoloji.com.tr/en/',
-    logo: 'https://turkiye.ai/wp-content/uploads/2021/01/Yapi-Kredi-Teknoloji.png',
-    startDate: '2025-02-17',
-    summary: 'Worked as a Full Stack Developer in the core banking domain, focusing on deposit application development. Built backend services with Java Spring Boot and interactive frontend interfaces with React.js. Utilized Oracle for data modeling and transaction management. Contributed to the migration from a monolithic architecture to a microservices-based structure. Developed unit tests and participated in batch job automation using UC4 within a highly regulated enterprise environment.',
-    highlights: [
-      'Played an active role in migrating legacy banking systems from a monolithic to a microservices architecture using Java Spring Boot.',
-      'Developed high-performance and reliable backend services for deposit operations.',
-      'Built responsive and maintainable frontend components using React.js.',
-      'Handled complex data modeling and optimized queries with Oracle Database.',
-      'Wrote unit tests using JUnit and Mockito to improve code quality and prevent regressions.',
-      'Automated scheduled batch operations with UC4 to ensure timely and efficient processing.',
-      'Collaborated with cross-functional teams to maintain clean code practices and support CI/CD workflows.',
-      'Improved system observability and debugging capabilities during the microservice transformation.',
-    ],
-  },
-  {
-    name: 'Huawei',
-    position: 'Software Engineer',
-    url: 'https://www.huawei.com/',
-    logo: 'https://www-file.huawei.com/-/media/corporate/images/home/logo/huawei_logo.png',
-    startDate: '2022-09-26',
-    endDate: '2025-02-06',
-    summary: 'Contributed to a diverse range of projects at Huawei, focusing on domains such as Fintech, ICT education, open-source library development, and mobile services. Leveraged cutting-edge technologies including Vue.js, React, React-Native, JavaScript, TypeScript, and Java Spring Boot to develop scalable and secure applications, and enhance both user experience and operational efficiency.',
-    highlights: [
-      'Worked with Vue.js to enhance global student training platforms, improving scalability and user interaction in the education technology domain.',
-      'Utilized TypeScript and vanilla JavaScript to build and extend open-source graph tools, particularly focusing on graph rendering and flexibility in the library development domain.',
-      'Developed a tag management system using vanilla JavaScript to streamline digital marketing operations and improve website performance.',
-      'Contributed to Fintech solutions with a focus on payment system integration using Vue.js and TypeScript, ensuring secure and scalable financial transactions.',
-      'Built React Native plugins for Huawei Mobile Services (HMS) Core, enhancing mobile services across areas like Location Kit and Account Kit for millions of users worldwide.',
-      'Developed internal enterprise systems using React and Java Spring Boot, optimizing operational processes in enterprise software development.',
-    ],
-  },
-  {
-    name: 'Erciyes University IT Department',
-    position: 'Intern',
-    url: 'https://www.erciyes.edu.tr/',
-    logo: 'https://www.erciyes.edu.tr/images/logo.png',
-    startDate: '2022-08-12',
-    endDate: '2022-09-12',
-    summary: 'Built a full-stack inventory management system using React.js and Node.js. Implemented features for tracking items, managing stock levels, and generating reports, improving internal processes.',
-    highlights: [
-      'Developed a full-stack inventory management system using React.js and Node.js.',
-      'Implemented item tracking, stock level management, and report generation features.',
-      'Improved internal processes through the automation of inventory management.',
-    ],
-  },
-  {
-    name: 'CTech',
-    position: 'Intern',
-    url: 'https://ctech.com.tr/en/',
-    logo: 'https://ctech.com.tr/wp-content/uploads/2023/06/logo.png',
-    startDate: '2021-08-02',
-    endDate: '2021-09-02',
-    summary: 'Contributed to developing a live broadcast application with Flutter and RTMP protocol. Ensured seamless integration with the live broadcast device and enhanced user experiences with video streaming and real-time interaction features.',
-    highlights: [
-      'Developed a live broadcast application using Flutter and RTMP protocol.',
-      'Improved user experience with real-time interaction and video streaming features.',
-      'Ensured seamless integration with the live broadcast device.',
-    ],
-  },
-];
+const work = {
+  en: [
+    {
+      name: 'Yapı Kredi Technology',
+      position: 'Expert Software Engineer',
+      url: 'https://www.ykteknoloji.com.tr/en/',
+      logo: 'https://turkiye.ai/wp-content/uploads/2021/01/Yapi-Kredi-Teknoloji.png',
+      startDate: '2025-02-17',
+      summary: 'Fullstack Software Engineer in the Time Deposit Application Development Team, working on banking and financial services solutions. Focused on transforming legacy Java 8 monoliths into Java 17 microservices, developing REST APIs with asynchronous messaging via RabbitMQ and Kafka, and building React-based frontends.',
+      highlights: [
+        'Transforming legacy Java 8 monolithic systems into Java 17 microservices using Spring Boot.',
+        'Developing REST APIs and occasional SOAP services for core banking operations.',
+        'Implementing asynchronous communication with RabbitMQ, Shovel, and Kafka.',
+        'Enabling inter-service communication through Feign clients.',
+        'Writing and maintaining Oracle PL/SQL procedures and cursors for performance-critical operations.',
+        'Designing and maintaining Spring Boot batch jobs with UC4 scheduling.',
+        'Building React applications with context-based state management.',
+        'Participating in alerting and monitoring processes for business-critical operations.',
+      ],
+    },
+    {
+      name: 'Huawei',
+      position: 'Software Engineer',
+      url: 'https://www.huawei.com/',
+      logo: 'https://www-file.huawei.com/-/media/corporate/images/home/logo/huawei_logo.png',
+      startDate: '2022-09-26',
+      endDate: '2025-02-06',
+      summary: 'Contributed to diverse projects spanning Fintech, ICT education, open-source libraries, and mobile services. Worked with Vue.js, React, React Native, TypeScript, and Java Spring Boot to deliver scalable and secure applications.',
+      highlights: [
+        'Dynamic Tag Manager: Developed a user-friendly system for managing website tags to improve online performance.',
+        'AstroGraph: Extended the mxGraph library with new features for an open-source graph visualization tool.',
+        'AppCube: Built Fintech solutions enhancing security and scalability in application development.',
+        'EBG Partner: Developed and maintained a platform for Huawei ICT Academy, supporting 200,000+ students globally.',
+        'HMS Core: Built React Native plugins for Huawei Mobile Service Kits, serving millions of users across Location Kit, Account Kit, and more.',
+        'Internal Project: Developed internal systems using React and Java Spring Boot as a fullstack developer.',
+      ],
+    },
+    {
+      name: 'Erciyes University IT Department',
+      position: 'Intern',
+      url: 'https://www.erciyes.edu.tr/',
+      logo: 'https://www.erciyes.edu.tr/images/logo.png',
+      startDate: '2022-08-12',
+      endDate: '2022-09-12',
+      summary: 'Developed an inventory management application using React for the frontend and Node.js with Knex.js for the backend, with MaterialUI for the user interface.',
+      highlights: [
+        'Built a full-stack inventory management system with React and Node.js.',
+        'Utilized MaterialUI to enhance the user interface and user experience.',
+        'Created features for tracking items, managing stock levels, and streamlining operations.',
+      ],
+    },
+    {
+      name: 'CTech',
+      position: 'Intern',
+      url: 'https://ctech.com.tr/en/',
+      logo: 'https://ctech.com.tr/wp-content/uploads/2023/06/logo.png',
+      startDate: '2021-08-02',
+      endDate: '2021-09-02',
+      summary: 'Developed a mobile application using Flutter that utilizes the RTMP protocol for live broadcasting, similar to CTech\'s ModeoLive tool.',
+      highlights: [
+        'Built a live-streaming mobile app using Flutter and RTMP protocol.',
+        'Enabled seamless live broadcasting from mobile devices.',
+        'Integrated real-time interaction and video streaming features.',
+      ],
+    },
+  ],
+  tr: [
+    {
+      name: 'Yapı Kredi Teknoloji',
+      position: 'Uzman Yazılım Mühendisi',
+      url: 'https://www.ykteknoloji.com.tr/',
+      logo: 'https://turkiye.ai/wp-content/uploads/2021/01/Yapi-Kredi-Teknoloji.png',
+      startDate: '2025-02-17',
+      summary: 'Vadeli Mevduat Uygulama Geliştirme Takımı\'nda Fullstack Yazılım Mühendisi. Bankacılık ve finansal hizmetler çözümleri üzerine çalışmaktayım. Eski Java 8 monolitik sistemleri Java 17 mikroservislere dönüştürme, RabbitMQ ve Kafka ile asenkron mesajlaşma ve React tabanlı arayüz geliştirme alanlarında deneyim sahibiyim.',
+      highlights: [
+        'Eski Java 8 monolitik sistemleri Java 17 Spring Boot mikroservislere dönüştürme.',
+        'Bankacılık operasyonları için REST API ve SOAP servisleri geliştirme.',
+        'RabbitMQ, Shovel ve Kafka ile asenkron iletişim altyapısı kurma.',
+        'Feign client\'lar ile servisler arası iletişim sağlama.',
+        'Performans kritik işlemler için Oracle PL/SQL prosedür ve cursor\'ları yazma ve bakımını yapma.',
+        'UC4 ile Spring Boot batch job\'ları tasarlama ve yönetme.',
+        'Context tabanlı state management ile React uygulamaları geliştirme.',
+        'İş kritik operasyonlar için alarm ve izleme süreçlerine katılma.',
+      ],
+    },
+    {
+      name: 'Huawei',
+      position: 'Yazılım Mühendisi',
+      url: 'https://www.huawei.com/',
+      logo: 'https://www-file.huawei.com/-/media/corporate/images/home/logo/huawei_logo.png',
+      startDate: '2022-09-26',
+      endDate: '2025-02-06',
+      summary: 'Fintech, BİT eğitimi, açık kaynak kütüphane geliştirme ve mobil servisler gibi çeşitli projelerde görev aldım. Vue.js, React, React Native, TypeScript ve Java Spring Boot ile ölçeklenebilir ve güvenli uygulamalar geliştirdim.',
+      highlights: [
+        'Dynamic Tag Manager: Web sitesi etiketlerini yönetmek için kullanıcı dostu bir sistem geliştirdim.',
+        'AstroGraph: mxGraph kütüphanesini genişleten açık kaynak bir grafik görselleştirme aracına katkıda bulundum.',
+        'AppCube: Güvenlik ve ölçeklenebilirliği artıran Fintech çözümleri geliştirdim.',
+        'EBG Partner: Huawei ICT Akademi için dünya genelinde 200.000+ öğrenciye hizmet veren platformu geliştirdim.',
+        'HMS Core: Location Kit, Account Kit ve daha fazlası için React Native eklentileri geliştirdim.',
+        'Dahili Proje: React ve Java Spring Boot ile dahili sistemler geliştirdim.',
+      ],
+    },
+    {
+      name: 'Erciyes Üniversitesi BT Departmanı',
+      position: 'Stajyer',
+      url: 'https://www.erciyes.edu.tr/',
+      logo: 'https://www.erciyes.edu.tr/images/logo.png',
+      startDate: '2022-08-12',
+      endDate: '2022-09-12',
+      summary: 'React ve Node.js (Knex.js) ile envanter yönetim uygulaması geliştirdim. Arayüz için MaterialUI kullandım.',
+      highlights: [
+        'React ve Node.js ile full-stack envanter yönetim sistemi geliştirdim.',
+        'MaterialUI ile kullanıcı arayüzünü iyileştirdim.',
+        'Stok takibi ve operasyonel süreçleri kolaylaştıran özellikler oluşturdum.',
+      ],
+    },
+    {
+      name: 'CTech',
+      position: 'Stajyer',
+      url: 'https://ctech.com.tr/',
+      logo: 'https://ctech.com.tr/wp-content/uploads/2023/06/logo.png',
+      startDate: '2021-08-02',
+      endDate: '2021-09-02',
+      summary: 'Flutter ve RTMP protokolü kullanarak canlı yayın yapan bir mobil uygulama geliştirdim.',
+      highlights: [
+        'Flutter ve RTMP protokolü ile canlı yayın mobil uygulaması geliştirdim.',
+        'Mobil cihazlardan kesintisiz canlı yayın yapabilme özelliği ekledim.',
+        'Gerçek zamanlı etkileşim ve video akışı özellikleri entegre ettim.',
+      ],
+    },
+  ],
+};
 
 export default work;

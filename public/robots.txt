@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /api
+Allow: /
+
+Sitemap: https://mustafaoezkan.com.tr/sitemap.xml

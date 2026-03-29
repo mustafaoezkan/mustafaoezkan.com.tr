@@ -32,3 +32,25 @@
 .job-link:hover .job-logo {
   filter: grayscale(0%);
 }
+
+@media (max-width: 736px) {
+  .title-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .job-logo {
+    width: 6rem;
+    margin-top: 0.5em;
+  }
+
+  .sub-title {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-logo {
+    width: 5rem;
+  }
+}
