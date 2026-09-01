@@ -30,6 +30,7 @@ Cell.propTypes = {
     image: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
+    logo: PropTypes.bool,
   }).isRequired,
 };
 
