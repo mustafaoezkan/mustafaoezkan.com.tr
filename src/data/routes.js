@@ -15,6 +15,11 @@ const routes = [
     path: '/resume',
   },
   {
+    labelKey: 'nav.projects',
+    label: 'Projects',
+    path: '/projects',
+  },
+  {
     labelKey: 'nav.contact',
     label: 'Contact',
     path: '/contact',

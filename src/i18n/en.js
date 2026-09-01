@@ -2,6 +2,7 @@ const en = {
   nav: {
     about: 'About',
     resume: 'Resume',
+    projects: 'Projects',
     contact: 'Contact',
   },
   sidebar: {

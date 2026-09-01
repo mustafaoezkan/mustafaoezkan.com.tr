@@ -2,6 +2,7 @@ const tr = {
   nav: {
     about: 'Hakkımda',
     resume: 'Özgeçmiş',
+    projects: 'Projeler',
     contact: 'İletişim',
   },
   sidebar: {
