@@ -5,6 +5,10 @@ const en = {
     projects: 'Projects',
     contact: 'Contact',
   },
+  projects: {
+    title: 'Projects',
+    subtitle: 'A selection of projects I\'ve worked on',
+  },
   sidebar: {
     about: 'About',
     description: 'Hi, I\'m Mustafa. I graduated from Erciyes University and I\'m currently working as an Expert Software Engineer at Yapı Kredi Technology. I design and build fullstack applications using Java Spring Boot microservices and React-based frontends within the financial domain.',

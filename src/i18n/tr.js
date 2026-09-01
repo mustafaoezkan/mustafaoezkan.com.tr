@@ -5,6 +5,10 @@ const tr = {
     projects: 'Projeler',
     contact: 'İletişim',
   },
+  projects: {
+    title: 'Projeler',
+    subtitle: 'Üzerinde çalıştığım projelerden bir seçki',
+  },
   sidebar: {
     about: 'Hakkımda',
     description: 'Merhaba, ben Mustafa. Erciyes Üniversitesi Bilgisayar Mühendisliği mezunuyum. Yapı Kredi Teknoloji\'de Uzman Yazılım Mühendisi olarak Java Spring Boot ve React ile finans sektöründe fullstack uygulamalar geliştiriyorum.',
