@@ -12,7 +12,7 @@ const data = {
       title: 'EduChamp',
       link: 'https://educhamp.com.tr',
       date: '2024-01-01',
-      desc: 'Çok kiracılı kreş yönetim platformu. Flutter mobil uygulama, React web panosu ve Go, Node.js, Python ve NestJS ile yazılmış 14 backend mikroservisinden oluşan fullstack bir proje. Servisler arası iletişim REST, RabbitMQ ve outbox/inbox deseniyle sağlanıyor. Veli-öğretmen mesajlaşması, günlük çocuk raporları, yemek & uyku takibi, sağlık kayıtları, anket yönetimi ve Socket.IO ile gerçek zamanlı sohbet gibi özellikler içeriyor.',
+      desc: 'Kreş ve anaokulları için geliştirdiğim kapsamlı bir yönetim platformu. Veliler ve öğretmenler Flutter ile hazırlanan mobil uygulamayı kullanırken okul yöneticileri React tabanlı web panosunu tercih ediyor. Arka planda Go, Node.js, Python ve NestJS ile yazılmış 14 servis çalışıyor; servisler birbirleriyle RabbitMQ üzerinden haberleşiyor. Veli-öğretmen mesajlaşması, günlük çocuk raporu, yemek ve uyku takibi, sağlık kayıtları, anket ve gerçek zamanlı sohbet gibi özellikler sunuyor.',
     },
   ],
 };

@@ -31,6 +31,22 @@
     }
   }
 
+  &.no-image {
+    .description {
+      position: relative;
+      bottom: auto;
+      border-top: solid 1px _palette(border);
+
+      p {
+        background-color: transparent;
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
   @media (max-width: 480px) {
     .description {
       position: inherit;

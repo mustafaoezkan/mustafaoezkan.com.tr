@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 
 const Cell = ({ data }) => (
-  <div className="cell-container">
+  <div className={`cell-container${!data.image ? ' no-image' : ''}`}>
     <article className="mini-post">
       <header>
         <h3>
