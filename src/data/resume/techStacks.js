@@ -2,7 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import {
   SiJavascript, SiTypescript, SiRedux, SiTailwindcss, SiExpress, SiApachekafka,
-  SiRabbitmq, SiOracle, SiFlutter,
+  SiRabbitmq, SiOracle, SiFlutter, SiGo,
 } from 'react-icons/si';
 import {
   FaReact, FaNodeJs, FaJava, FaVuejs, FaGithub, FaDocker,
@@ -73,6 +73,10 @@ const techStacks = [
   {
     title: 'Tailwind CSS',
     icon: <SiTailwindcss size={50} style={{ color: '#38B2AC' }} />,
+  },
+  {
+    title: 'Go',
+    icon: <SiGo size={50} style={{ color: '#00ADD8' }} />,
   },
   {
     title: 'GitHub',
