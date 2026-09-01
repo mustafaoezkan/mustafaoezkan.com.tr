@@ -66,6 +66,24 @@
     }
   }
 
+  .logo-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    padding: 2em;
+
+    img {
+      width: auto;
+      max-width: 120px;
+      max-height: 120px;
+    }
+
+    &:hover img {
+      @include vendor("transform", "scale(1.05)");
+    }
+  }
+
   header {
     z-index: 2;
     @include padding(1.25em, 1.25em, (0, 3em, 0, 0));

@@ -13,7 +13,7 @@ const Cell = ({ data }) => (
           {dayjs(data.date).format('MMMM, YYYY')}
         </time>
       </header>
-      <a href={data.link} className="image">
+      <a href={data.link} className={data.logo ? 'image logo-image' : 'image'}>
         <img src={`${process.env.PUBLIC_URL}${data.image}`} alt={data.title} />
       </a>
       <div className="description">
