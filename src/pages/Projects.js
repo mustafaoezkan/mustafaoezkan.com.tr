@@ -8,7 +8,8 @@ import Cell from '../components/Projects/Cell';
 import data from '../data/projects';
 
 const Projects = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const projects = data[language] || data.en;
   return (
     <Main title={t('projects.title')} description="Learn about Mustafa Ozkan's projects.">
       <article className="post" id="projects">
@@ -20,7 +21,7 @@ const Projects = () => {
             <p>{t('projects.subtitle')}</p>
           </div>
         </header>
-        {data.map((project) => (
+        {projects.map((project) => (
           <Cell data={project} key={project.title} />
         ))}
       </article>

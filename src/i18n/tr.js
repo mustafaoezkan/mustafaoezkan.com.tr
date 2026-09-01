@@ -7,7 +7,7 @@ const tr = {
   },
   projects: {
     title: 'Projeler',
-    subtitle: 'Üzerinde çalıştığım projelerden bir seçki',
+    subtitle: 'Üzerinde çalıştığım projeler',
   },
   sidebar: {
     about: 'Hakkımda',

@@ -7,7 +7,7 @@ const en = {
   },
   projects: {
     title: 'Projects',
-    subtitle: 'A selection of projects I\'ve worked on',
+    subtitle: 'Projects I\'ve worked on',
   },
   sidebar: {
     about: 'About',
