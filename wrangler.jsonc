@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mustafaoezkan-com-tr",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./build",
+    // Unknown paths (/resume, /projects, ...) fall back to index.html so React Router can handle them
+    "not_found_handling": "single-page-application"
+  }
+}
