@@ -36,18 +36,30 @@ const readJson = async (request) => {
   }
 };
 
+// Returns 'ok', 'rejected' (bad or missing token) or 'misconfigured'
+// (the secret key is missing or not accepted by Turnstile).
 const verifyTurnstile = async (token, request, env) => {
-  if (typeof token !== 'string' || !token || token.length > 2048) return false;
+  if (!env.TURNSTILE_SECRET_KEY) {
+    console.error('turnstile: TURNSTILE_SECRET_KEY is not set');
+    return 'misconfigured';
+  }
+  if (typeof token !== 'string' || !token || token.length > 2048) return 'rejected';
   const form = new FormData();
   form.append('secret', env.TURNSTILE_SECRET_KEY);
   form.append('response', token);
   const ip = request.headers.get('CF-Connecting-IP');
   if (ip) form.append('remoteip', ip);
   const res = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body: form });
-  if (!res.ok) return false;
-  const outcome = await res.json();
-  return outcome.success === true;
+  const outcome = await res.json().catch(() => ({}));
+  if (outcome.success === true) return 'ok';
+  const codes = outcome['error-codes'] || [];
+  console.error('turnstile: verification failed:', res.status, codes.join(','));
+  return codes.some((code) => code.endsWith('-input-secret')) ? 'misconfigured' : 'rejected';
 };
+
+const verificationError = (result) => (result === 'misconfigured'
+  ? json({ ok: false, error: 'server_misconfigured' }, 500)
+  : json({ ok: false, error: 'verification_failed' }, 403));
 
 // Header values must never contain line breaks (prevents header injection).
 const singleLine = (value) => String(value).replace(/[\r\n\t]+/g, ' ').trim();
@@ -96,9 +108,8 @@ const handleContact = async (request, env) => {
     return json({ ok: false, error: 'invalid_input' }, 400);
   }
 
-  if (!await verifyTurnstile(data.token, request, env)) {
-    return json({ ok: false, error: 'verification_failed' }, 403);
-  }
+  const verification = await verifyTurnstile(data.token, request, env);
+  if (verification !== 'ok') return verificationError(verification);
 
   const raw = buildMime({
     from: env.CONTACT_FROM,
@@ -122,9 +133,8 @@ const handleCv = async (request, env) => {
   const data = await readJson(request);
   const file = CV_FILES[data.lang] || CV_FILES.en;
 
-  if (!await verifyTurnstile(data.token, request, env)) {
-    return json({ ok: false, error: 'verification_failed' }, 403);
-  }
+  const verification = await verifyTurnstile(data.token, request, env);
+  if (verification !== 'ok') return verificationError(verification);
 
   const asset = await env.ASSETS.fetch(new URL(`/cv/${file}`, request.url));
   if (!asset.ok) return json({ ok: false, error: 'not_found' }, 404);
