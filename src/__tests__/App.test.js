@@ -7,6 +7,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import App from '../App';
+import { ThemeProvider } from '../contexts/ThemeContext';
+import { LanguageProvider } from '../contexts/LanguageContext';
 
 describe('renders the app', () => {
   // mocks the fetch API used on the stats page and the about page.
@@ -18,12 +20,26 @@ describe('renders the app', () => {
   }));
   // mocks the scrollTo API used when navigating to a new page.
   window.scrollTo = jest.fn();
+  // mocks the matchMedia API used by the theme provider.
+  window.matchMedia = jest.fn(() => ({ matches: false }));
+  // mocks the IntersectionObserver API used by scroll animations.
+  global.IntersectionObserver = jest.fn(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+  }));
   let container;
   beforeEach(async () => {
     container = document.createElement('div');
     document.body.appendChild(container);
     await act(async () => {
-      await ReactDOM.createRoot(container).render(<App />);
+      await ReactDOM.createRoot(container).render(
+        <ThemeProvider>
+          <LanguageProvider>
+            <App />
+          </LanguageProvider>
+        </ThemeProvider>,
+      );
     });
   });
   afterEach(() => {
@@ -46,7 +62,7 @@ describe('renders the app', () => {
     await act(async () => {
       await aboutLink.click();
     });
-    expect(document.title).toContain('About |');
+    expect(document.title).toContain('About Me |');
     expect(window.location.pathname).toBe('/about');
     expect(window.scrollTo).toHaveBeenNthCalledWith(1, 0, 0);
     expect(global.fetch).toHaveBeenCalledTimes(1);
