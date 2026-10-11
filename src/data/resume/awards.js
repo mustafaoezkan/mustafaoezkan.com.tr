@@ -1,5 +1,11 @@
 const awards = [
   {
+    title: 'Biz Biriz',
+    issuer: 'Yapı Kredi Teknoloji',
+    date: '2026-06-01',
+    url: 'https://www.ykteknoloji.com.tr/',
+  },
+  {
     title: 'Biz Yıldızız',
     issuer: 'Yapı Kredi Teknoloji',
     date: '2025-06-01',
