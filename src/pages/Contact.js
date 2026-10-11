@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Main from '../layouts/Main';
 import EmailLink from '../components/Contact/EmailLink';
+import ContactForm from '../components/Contact/ContactForm';
 import ContactIcons from '../components/Contact/ContactIcons';
 import AnimatedPage from '../components/Template/AnimatedPage';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -27,6 +28,7 @@ const Contact = () => {
             <p>{t('contact.description')}</p>
             <EmailLink />
           </div>
+          <ContactForm />
           <ContactIcons />
         </article>
       </AnimatedPage>

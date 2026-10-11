@@ -19,6 +19,58 @@
       }
     }
   }
+
+  .contact-form {
+    margin: 0 0 3em;
+    text-align: left;
+
+    h3 {
+      margin-bottom: 1.5em;
+    }
+
+    .contact-form-row {
+      display: flex;
+      gap: 1.5em;
+
+      .contact-form-field {
+        flex: 1;
+      }
+    }
+
+    .contact-form-field {
+      margin-bottom: 1.5em;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .turnstile {
+      margin-bottom: 1.5em;
+    }
+
+    .contact-form-status {
+      min-height: 1.5em;
+      margin: 1em 0 0;
+      font-size: 0.9em;
+
+      &.sent {
+        color: #27ae60;
+      }
+
+      &.error,
+      &.verification {
+        color: #c0392b;
+      }
+    }
+  }
+}
+
+@media (max-width: 736px) {
+  #contact .contact-form .contact-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 .inline {

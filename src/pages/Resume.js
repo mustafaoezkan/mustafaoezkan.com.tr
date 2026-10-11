@@ -7,6 +7,7 @@ import Education from '../components/Resume/Education';
 import Experience from '../components/Resume/Experience';
 import TechStacks from '../components/Resume/TechStacks';
 import Awards from '../components/Resume/Awards';
+import CvDownload from '../components/Resume/CvDownload';
 import AnimatedPage from '../components/Template/AnimatedPage';
 import AnimatedSection from '../components/Template/AnimatedSection';
 import degrees from '../data/resume/degrees';
@@ -29,10 +30,6 @@ const Resume = () => {
 
   const localDegrees = degrees[language] || degrees.en;
   const localWork = work[language] || work.en;
-
-  const cvFile = language === 'tr'
-    ? `${process.env.PUBLIC_URL}/cv/Mustafa_Ozkan_CV_TR.pdf`
-    : `${process.env.PUBLIC_URL}/cv/Mustafa_Ozkan_CV_EN.pdf`;
 
   return (
     <Main
@@ -67,16 +64,7 @@ const Resume = () => {
           <AnimatedSection delay={0.1}>
             <Awards data={awards} />
           </AnimatedSection>
-          <div className="cv-download">
-            <a
-              href={cvFile}
-              download
-              className="button cv-button"
-            >
-              <span className="cv-icon">&#8681;</span>{' '}
-              {t('resume.downloadCV')} ({language.toUpperCase()})
-            </a>
-          </div>
+          <CvDownload />
         </article>
       </AnimatedPage>
     </Main>

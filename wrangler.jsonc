@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mustafaoezkan-com-tr",
+  "main": "worker/index.js",
   "compatibility_date": "2026-09-01",
   "workers_dev": true,
   "preview_urls": true,
@@ -8,7 +9,23 @@
   "previews": {},
   "assets": {
     "directory": "./build",
+    "binding": "ASSETS",
     // Unknown paths (/resume, /projects, ...) fall back to index.html so React Router can handle them
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    // The Worker answers the API itself and guards direct access to the CV files
+    "run_worker_first": ["/api/*", "/cv/*"]
+  },
+  // Contact form mail. Sent through Email Routing on mustafaoezkan.com so the
+  // Google Workspace MX records on mustafaoezkan.com.tr stay untouched.
+  "send_email": [
+    {
+      "name": "CONTACT_EMAIL",
+      "destination_address": "me@mustafaoezkan.com.tr"
+    }
+  ],
+  "vars": {
+    "CONTACT_FROM": "contact@mustafaoezkan.com",
+    "CONTACT_TO": "me@mustafaoezkan.com.tr"
   }
+  // TURNSTILE_SECRET_KEY is a secret set in the Cloudflare dashboard, never in this file.
 }
